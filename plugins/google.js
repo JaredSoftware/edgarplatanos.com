@@ -1,6 +1,7 @@
 // plugins/misFunciones.js
 import axios from "axios"
 import { formatToNumber, formatToCurrency } from "simple-mask-money";
+import Swal from "sweetalert2";
 
 export default (context, inject) => {
 	const sheets = async (accesstoken, sheet, method, datos) => {
@@ -27,8 +28,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		return response
 	};
@@ -46,8 +53,14 @@ export default (context, inject) => {
 		let responseKnowID = await axios.request(configKnowID).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		/*------------------------ eliminar SHEETID Viaje start ----------------------------*/
 		let dataDeleteSheet = JSON.stringify(
@@ -74,8 +87,14 @@ export default (context, inject) => {
 		await axios.request(configDeleteSheet).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		/*------------------------ eliminar SHEETID Viaje end ----------------------------*/
 		/*------------------------ saber SHEETID Viaje end ----------------------------*/
@@ -108,8 +127,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		return response.data
 	};
@@ -134,8 +159,14 @@ export default (context, inject) => {
 		let responseCopySheet = await axios.request(configCopySheet).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		/*------------------------ Se Copia el Viaje end ----------------------------*/
 		/*------------------------ Se agrega Viaje Start ----------------------------*/
@@ -159,8 +190,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		let getFromName = response.updates.updatedRange
 		let idFromName = getFromName.split("C");
@@ -195,8 +232,14 @@ export default (context, inject) => {
 		let responseChangeNameSheet = await axios.request(configChangeNameSheet).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		return responseChangeNameSheet.responseChangeNameSheet;
 	};
@@ -221,8 +264,14 @@ export default (context, inject) => {
 		let responseCopySheet = await axios.request(configCopySheet).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		/*------------------------ Se Copia el Viaje end ----------------------------*/
 		/*------------------------ Se agrega Viaje Start ----------------------------*/
@@ -246,8 +295,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		//console.log(response);
 		let getFromName = response.updates.updatedRange
@@ -284,8 +339,14 @@ export default (context, inject) => {
 		let responseChangeNameSheet = await axios.request(configChangeNameSheet).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		return responseChangeNameSheet.responseChangeNameSheet;
 	};
@@ -309,8 +370,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		/*make abono*/
 		let configAbono = {
@@ -325,8 +392,14 @@ export default (context, inject) => {
 		let responseAbono = await axios.request(configAbono).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			//window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 
 		return responseAbono
@@ -352,8 +425,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 
 
@@ -369,8 +448,14 @@ export default (context, inject) => {
 		let responseKnowID = await axios.request(configKnowID).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 
 		let precio = formatToCurrency((Number(data.costGrueso) * formatToNumber(data.costGruesoPircing)) + (Number(data.costSegundas) * formatToNumber(data.costSegundasPircing)) + (Number(data.costPica) * formatToNumber(data.costPicaPircing)) + (Number(data.costMaduro) * formatToNumber(data.costMaduroPircing)))
@@ -402,8 +487,14 @@ export default (context, inject) => {
 		let responseUser = await axios.request(configUser).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			//window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 		return responseUser
 	};
@@ -422,8 +513,14 @@ export default (context, inject) => {
 		let response = await axios.request(config).then((response) => {
 			return response.data
 		}).catch((error) => {
-			console.log(error.response.data);
-			window.location = "/"
+			Swal.fire({
+				title: 'Error',
+				text: 'Hubo un error en la aplicación.',
+				icon: 'error',
+				confirmButtonText: 'Recargar'
+			}).then(() => {
+				window.location = "/"; // Recargar la página
+			})
 		});
 
 		response.values.forEach((row, rowIndex) => {
