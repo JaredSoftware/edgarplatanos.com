@@ -67,11 +67,11 @@ export default {
     extendRoutes(routes) {
       routes.forEach((route) => {
         // When options.generate.subFolders is true (default)
-        const alias = route.path.length > 1 ? `${route.path}/index.html` : '/index.html'
+        //const alias = route.path.length > 1 ? `${route.path}/index.html` : '/index.html'
 
         // When options.generate.subFolders is false
-        //const normalizedRoute = route.path.replace(/\/$/, '') // Remove trailing slashes if they exist
-        //const alias = route.path.length > 1 ? `${normalizedRoute}.html` : '/index.html'
+        const normalizedRoute = route.path.replace(/\/$/, '') // Remove trailing slashes if they exist
+        const alias = route.path.length > 1 ? `${normalizedRoute}.html` : '/index.html'
 
         route.alias = alias
       })
