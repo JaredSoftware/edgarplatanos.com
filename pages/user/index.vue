@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       info: [],
-      idUser: this.$route.params.id,
+      idUser: this.$route.query.id,
       abono: "",
       access_token: "",
       user: "",
@@ -121,7 +121,7 @@ export default {
     this.access_token = toke2Spilt[1];
     const response = await this.$sheets(
       toke2Spilt[1],
-      `Clientes!B${Number(this.$route.params.id) + 1}`,
+      `Clientes!B${Number(this.$route.query.id) + 1}`,
       "get"
     );
     const KnowUser = await this.$sheets(

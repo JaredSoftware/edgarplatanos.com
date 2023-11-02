@@ -237,7 +237,7 @@ export default {
   data() {
     return {
       info: [],
-      viaje: this.$route.params.id,
+      viaje: this.$route.query.id,
       access_token: "",
       linkForredirect: "",
       clientes: [],
@@ -269,7 +269,7 @@ export default {
     this.access_token = toke2Spilt[1];
     const response = await this.$sheets(
       toke2Spilt[1],
-      `Viaje${this.$route.params.id}`,
+      `Viaje${this.$route.query.id}`,
       "get"
     );
     response.values.map(async (x, y) => {
